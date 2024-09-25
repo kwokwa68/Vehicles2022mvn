@@ -1,3 +1,5 @@
+//this effectively is a Java Bean or a DTO (data transfer object)
+//usually don't have behavior methods
 public class Vehicle {
     private int milesPerGallon = 20;
     private double gallonsOfGas = 10.0;
@@ -30,5 +32,10 @@ public class Vehicle {
     public void go(int milesDriven) {
         setGallonsOfGas(getGallonsOfGas() - (milesDriven /getMilesPerGallon()));
         setOdometer(getOdometer() + milesDriven);
+    }
+
+    @Override
+    public String toString() {
+        return "Odometer " + getOdometer() + " Gallons of Gas " + getGallonsOfGas();
     }
 }
